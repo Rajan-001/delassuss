@@ -47,6 +47,7 @@ if (grapes1Ref.current) {
     // Move flower 2 with a different speed for depth effect
     grapes2Ref.current.style.transform = `translate(${newX * 2.5}px, ${newY * 2.5}px)`;
   }
+  
   requestAnimationFrame(animationFrame)
 }
 
@@ -73,7 +74,7 @@ return ()=>{
           </div>
 
           
-          <div className="text-[200px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-16">
+          <div className="text-[40px] sm:text-[60px] md:text-[100px] lg:text-[120px] xl:text-[150px] 2xl:text-[200px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-16">
               <div className=' z-18'>
                 Grapes
               </div>

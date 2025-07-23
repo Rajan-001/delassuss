@@ -84,7 +84,7 @@ return()=>{
             
           </div>
           
-          <div className="text-[200px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-16 leading-56">
+          <div className="text-[40px] sm:text-[60px] md:text-[100px] lg:text-[120px] xl:text-[150px] 2xl:text-[200px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-16 leading-56">
               <div className=' z-18 '>
                Oranges
               </div>

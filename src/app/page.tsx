@@ -68,7 +68,7 @@ export default function Home() {
                </div>
  
 <div className="absolute top-10 left-1/2 transform -translate-x-1/2 z-20 text-center">
-        <div className="flex justify-center gap-10 text-xl font-semibold ">
+        <div className="flex justify-center xl:gap-10 md:text-xl font-semibold md:w-full md:gap-2 sm:gap-1 sm:w-6 sm:text-[16px] text-[8px] gap-0.5">
           {components.map((item, idx) => (
     
             <div key={idx} className="relative inline-block transition-normal duration-700 px-4">
