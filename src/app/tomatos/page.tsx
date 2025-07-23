@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import  { images } from "../../../../public/products/Product";
+import  { images } from "../../../public/products/Product";
 import { useGSAP } from '@gsap/react';
-import { ProductDescription } from '../../../../public/products/components/ProductDescription/ProductDescription';
+import { ProductDescription } from '../../../public/products/components/ProductDescription';
 
-import SVGComponent from '../../../../public/assests/Svg/Svg.';
+import SVGComponent from '../../../public/assests/Svg/Svg.';
 
 import { gsap } from "gsap";
     
@@ -31,7 +31,7 @@ export default function ProductsPage() {
           start: '140px 140px',
           end: '+=600px',
           scrub: true,
-          markers:true
+         
         }
      })
 
@@ -42,7 +42,7 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
     gsap.to("#Image3",{
@@ -52,7 +52,7 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
 
@@ -70,7 +70,7 @@ export default function ProductsPage() {
          start: '50px 60px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
    
@@ -125,25 +125,48 @@ export default function ProductsPage() {
     <SVGComponent/>
     </div> 
 
-<div className='relative left-30 top-52'>
-<div className='text-white  w-78 leading-8'>
-    <p>Products</p>
-    <p className='text-4xl my-4'>Snacking tomatoes</p>
-        <p> Duroc offers 24 varieties of exquisite snacking
-      tomatoes all year round.
-      Duroc's concept of "collections” is famous, especially in Russia. This concept structures the varietal offer into 5 collections: Notorious, Sun pops, Lolly Pops, Pop Star and Delicates. For more details, download the brochure.
-      Visit Duroc</p> 
-    </div>
+<div className="relative top-20 sm:top-28 md:top-52 px-4 sm:px-6 md:px-0 sm:left-12 md:left-30">
+  <div className="text-white w-full sm:w-4/5 md:w-[28rem] leading-relaxed">
+    <p className="text-sm uppercase tracking-wide text-gray-200">Products</p>
+    <p className="text-2xl sm:text-3xl md:text-4xl font-semibold my-4">Snacking tomatoes</p>
+    <p className="text-base sm:text-lg">
+      Duroc offers 24 varieties of exquisite snacking tomatoes all year round. <br />
+      Duroc's concept of "collections” is famous, especially in Russia. This concept
+      structures the varietal offer into 5 collections: Notorious, Sun pops, Lolly Pops,
+      Pop Star and Delicates. <br /> For more details, download the brochure.
+      <br /><strong>Visit Duroc</strong>
+    </p>
+  </div>
 </div>
- <div className={`w-140 h-150 right-36 absolute top-0 rounded-4xl `} style={{
-  backgroundColor:"#e7524c"
- }}>
-    <div className='relative' >
-    <Image src={images.tomatos.Tomatos_1} alt='Avacodos_Image_2' className='w-60 absolute top-20 right-8 z-12' id='Image2'/>
-    <Image src={images.tomatos.Tomatos_2} alt='Avacodos_Image_3' className='w-60  absolute top-90 -right-8 z-10' id='Image3'/>
-    <Image src={images.tomatos.Tomatos_3} alt='Avacodos_Image_3' className='w-70  absolute top-80  z-10 left-0' id='Image1'/>
-    </div>
- </div>
+
+<div
+  className="absolute top-0 right-4 sm:right-12 md:right-36 w-full sm:w-[26rem] md:w-[35rem] h-[28rem] sm:h-[34rem] md:h-[38rem] rounded-4xl bg-transparent xl:bg-[#e7524c]"
+>
+  <div className="relative w-full h-full">
+    <Image
+      unoptimized
+      src={images.tomatos.Tomatos_1}
+      alt="Tomatos_Image_1"
+      className="sm:w-24 w-16 md:w-44 xl:w-60 absolute top-12 sm:top-20 right-4 sm:right-8 z-12"
+      id="Image2"
+    />
+    <Image
+      unoptimized
+      src={images.tomatos.Tomatos_2}
+      alt="Tomatos_Image_2"
+      className="sm:w-28 w-14 md:w-44 xl:w-60 absolute top-[18rem] sm:top-[22rem] right-0 sm:-right-8 z-10"
+      id="Image3"
+    />
+    <Image
+      unoptimized
+      src={images.tomatos.Tomatos_3}
+      alt="Tomatos_Image_3"
+      className="sm:w-32 w-24 md:w-48 xl:w-70 absolute top-[16rem] left-2 sm:left-4 z-10"
+      id="Image1"
+    />
+  </div>
+</div>
+
 
     </div>
    
@@ -188,7 +211,7 @@ export default function ProductsPage() {
                    
                 </div>
                 <div className='absolute left-4 bottom-2 w-80'>
-                <Image src={images.tomatos.Tomatos_3} alt='Avacodos image' id="Image4"/>
+                <Image unoptimized src={images.tomatos.Tomatos_3} alt='Avacodos image' id="Image4"/>
             </div>     
              </div>
            

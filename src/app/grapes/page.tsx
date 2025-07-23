@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import  { images } from "../../../../public/products/Product";
+import  { images } from "../../../public/products/Product";
 import { useGSAP } from '@gsap/react';
-import { ProductDescription } from '../../../../public/products/components/ProductDescription/ProductDescription';
+import { ProductDescription } from '../../../public/products/components/ProductDescription';
 
-import SVGComponent from '../../../../public/assests/Svg/Svg.';
+import SVGComponent from '../../../public/assests/Svg/Svg.';
 
 import { gsap } from "gsap";
     
@@ -32,7 +32,7 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+       
        }
     })
     gsap.to("#Image3",{
@@ -42,7 +42,7 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+       
        }
     })
 
@@ -60,7 +60,7 @@ export default function ProductsPage() {
          start: '440px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+       
        }
     })
    
@@ -115,26 +115,40 @@ export default function ProductsPage() {
     <SVGComponent/>
     </div> 
 
-<div className='relative left-30 top-52'>
-<div className='text-white  w-78 leading-8'>
-    <p>Products</p>
-    <p className='text-4xl my-4'>Grapes</p>
-          Primrose is the closest carnation grower to
-      Europe.
-      It produces hundreds of varieties - both spray and standard carnations with the preferred mix color required by customers.
-      Primrose exports 55 million stems of Spray
-      Carnations and approximately 10 million stems of Standard Carnations.
-    </div>
+<div className="relative left-12 top-24 md:left-30 md:top-52">
+  <div className="text-white w-11/12 sm:w-4/5 md:w-[30rem] leading-8 sm:text-center z-10">
+    <p className="text-sm uppercase tracking-wide">Products</p>
+    <p className="text-2xl md:text-4xl font-semibold my-4 ">Grapes</p>
+    <p>
+      Primrose is one of the leading grape producers in the region, delivering premium-quality
+      table grapes to markets across Europe. With a focus on freshness and flavor, it cultivates
+      a wide variety of grapes to meet diverse consumer preferences. Each season, Primrose exports
+      millions of bunches, meeting the highest standards of quality and sustainability.
+    </p>
+  </div>
 </div>
- <div className={`w-140 h-150 right-36 absolute top-0 rounded-4xl `} style={{
-  backgroundColor:"#fa7692"
- }}>
-    <div className='relative' >
-    <Image src={images.grapes.Grapes_1} alt='Avacodos_Image_2' className='w-120 absolute top-56 -right-6 z-12' id='Image2'/>
-    <Image src={images.grapes.Grapes_2} alt='Avacodos_Image_3' className='w-120  absolute top-30 right-14 z-10' id='Image3'/>
-   
+
+    <div
+      className={`2xl:w-140 2xl:h-150 xl:w-120 xl:h-130 h-120 w-85 right-36 md:top-12 absolute xl:top-0 rounded-4xl z-4 sm:bg-transparent xl:bg-[#fa7692]`}
+    >
+      <div className="relative">
+        <Image
+          unoptimized
+          src={images.grapes.Grapes_1}
+          alt="Grapes_Image_1"
+          className="w-120 absolute top-56 -right-6 z-12"
+          id="Image2"
+        />
+        <Image
+          unoptimized
+          src={images.grapes.Grapes_2}
+          alt="Grapes_Image_2"
+          className="w-120 absolute top-30 right-14 z-10"
+          id="Image3"
+        />
+      </div>
     </div>
- </div>
+
 
     </div>
    
@@ -179,7 +193,7 @@ export default function ProductsPage() {
                    
                 </div>
                 <div className='absolute left-4 bottom-2 w-80'>
-                <Image src={images.grapes.Grapes_2} alt='Avacodos image' id="Image4"/>
+                <Image unoptimized src={images.grapes.Grapes_2} alt='Avacodos image' id="Image4"/>
             </div>     
              </div>
            
@@ -188,7 +202,7 @@ export default function ProductsPage() {
                 <h1>Any Questions</h1>
                 <p>Please do not hestitate to ask more information<br/>
                 We will be happy to answer</p>
-                <button className='rounded-4xl p-4 bg-pink-600 mt-8 text-2xl'>Contact Us</button>
+                <button className='rounded-4xl p-4 bg-red-600 mt-8 text-2xl'>Contact Us</button>
                 </div>
 
 

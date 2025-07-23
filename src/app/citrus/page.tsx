@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import  { images } from "../../../../public/products/Product";
+import  { images } from "../../../public/products/Product";
 import { useGSAP } from '@gsap/react';
-import { ProductDescription } from '../../../../public/products/components/ProductDescription/ProductDescription';
+import { ProductDescription } from '../../../public/products/components/ProductDescription';
 
-import SVGComponent from '../../../../public/assests/Svg/Svg.';
+import SVGComponent from '../../../public/assests/Svg/Svg.';
 
 import { gsap } from "gsap";
     
@@ -24,7 +24,16 @@ declare module "react" {
 export default function ProductsPage() {
 
   useGSAP(()=>{
-
+    gsap.to("#Image1",{
+     y:-130,
+     scrollTrigger: {
+         trigger: '#Box',
+         start: '140px 140px',
+         end: '+=600px',
+         scrub: true,
+        
+       }
+    })
     gsap.to("#Image2",{
      y:-130,
      scrollTrigger: {
@@ -32,7 +41,7 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
     gsap.to("#Image3",{
@@ -42,10 +51,20 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
-  
+    gsap.to("#Image5",{
+      y:-130,
+      scrollTrigger: {
+          trigger: '#Box',
+          start: '140px 140px',
+          end: '+=600px',
+          scrub: true,
+         
+        }
+     })
+
 
     gsap.set("#Image4",{
     y:-600
@@ -59,7 +78,7 @@ export default function ProductsPage() {
          start: '440px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
    
@@ -106,7 +125,7 @@ export default function ProductsPage() {
    };
  }, []);
 
-  return (<section className={`overflow-hidden `} style={{ backgroundColor: "#ffb700" }}>
+  return (<section className={`overflow-hidden `} style={{ backgroundColor: "#ff8921" }}>
    
     <div className=' w-screen h-screen relative ' id='Box'>
 
@@ -114,44 +133,68 @@ export default function ProductsPage() {
     <SVGComponent/>
     </div> 
 
-<div className='relative left-30 top-52'>
-<div className='text-white  w-78 leading-8'>
-    <p>Products</p>
-    <p className='text-4xl my-4'>Flowers</p>
-          Primrose is the closest carnation grower to
-      Europe.
-      It produces hundreds of varieties - both spray and standard carnations with the preferred mix color required by customers.
-      Primrose exports 55 million stems of Spray
-      Carnations and approximately 10 million stems of Standard Carnations.
-    </div>
+<div className="relative left-12 top-24 md:left-30 md:top-72">
+  <div className="text-white w-11/12 sm:w-4/5 md:w-[30rem] leading-8 sm:text-center">
+    <p className="text-sm uppercase tracking-wide">Products</p>
+    <p className="text-2xl md:text-4xl font-semibold my-4">Citrus</p>
+    <p>
+      The young farm planted by Delassus will reach full capacity by 2025.
+      The expected volume is 2,000 tons, available from January through April,
+      ensuring a fresh supply during the early season.
+    </p>
+  </div>
 </div>
- <div className={`w-140 h-150 right-36 absolute top-0 rounded-4xl `} style={{
-  backgroundColor:"#ffd200"
- }}>
-    <div className='relative' >
-    <Image src={images.flowers.Flower_1} alt='Avacodos_Image_2' className='w-136 absolute top-86 -right-6 z-12' id='Image2'/>
-    <Image src={images.flowers.Flower_2} alt='Avacodos_Image_3' className='w-72  absolute top-30 right-14 z-16' id='Image3'/>
-   
-    </div>
- </div>
+
+
+<div className="w-full sm:w-[32rem] md:w-[35rem] xl:w-[35rem] h-[40rem] sm:h-[46rem] md:h-[50rem] right-4 sm:right-12 md:right-36 absolute top-0 rounded-4xl md:bg-transparent xl:bg-[#ff7128]">
+  <div className="relative w-full h-full">
+    <Image
+      unoptimized
+      src={images.oranges.Oranges_1}
+      alt="Oranges_Image_1"
+      className="w-32 sm:w-48 md:w-60 xl:w-66 absolute top-72 sm:top-96 -right-2 sm:-right-6 md:-right-12 z-12"
+      id="Image2"
+    />
+    <Image
+      unoptimized
+      src={images.oranges.Oranges_2}
+      alt="Oranges_Image_2"
+      className="w-16 sm:w-24 md:w-28 xl:w-32 absolute top-[24rem] sm:top-[26rem] md:top-[28rem] left-6 sm:left-12 md:left-20 z-16"
+      id="Image3"
+    />
+    <Image
+      unoptimized
+      src={images.oranges.Oranges_3}
+      alt="Oranges_Image_3"
+      className="w-28 sm:w-40 md:w-52 xl:w-64 absolute top-52 sm:top-60 md:top-34 left-6 sm:left-10 md:left-26 z-14"
+      id="Image1"
+    />
+    <Image
+      unoptimized
+      src={images.oranges.Oranges_4}
+      alt="Oranges_Image_4"
+      className="w-32 sm:w-40 md:w-52 xl:w-70 absolute top-4 sm:top-6 md:top-8 right-8 sm:right-16 md:right-24 z-14"
+      id="Image5"
+    />
+  </div>
+</div>
+
 
     </div>
    
-    <div
-  className={`w-screen h-[100vh] overflow-hidden relative flex `}
-  style={{
-    backgroundColor: "#f7be00",
-  }}
->
-  <video
-    src="/assests/Videos/Boucle_Flowers.mp4"
-    className="w-full h-full object-fill"
-    autoPlay
-    loop
-    muted
-    playsInline
-  />
-</div>
+    <div className={`w-screen h-[85vh] overflow-hidden relative flex justify-center items-center `} style={{
+      backgroundColor:"#ff8921"
+    }}>
+      <video
+        src="/assests/Videos/Boucle_Citrus.mp4"
+        className="w-full h-full object-contain"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      
+    </div>
 
     <div id='Section2'>
     <div className=" relative overflow-y-hidden overflow-x-hidden">
@@ -159,19 +202,19 @@ export default function ProductsPage() {
 
 
                 <div className="w-96 text-center leading-10 text-xl  ">
-                    <h1 className='text-4xl  '>Flowers for Morocco</h1>
-                    <p className='mt-8'>
-                      
-                  Primrose covers the production process, from producing their own cuttings to post-harvest treatment.<br/>
-                  </p>
-                  <p className='mt-8'>
-                  Primrose also grows a wide range of species for Moroccan local market such as Lisianthus, Gladioli, Alsromeria, Anthurium, Gerbera and many other varieties.
-                  </p>
-                  <br/>
-                  
+                    <h1 className='text-4xl '>Varieties</h1>
+                    <p >
+
+                    Best variety of citrus <br/>
+                    Main variety: Hass<br/>
+                    Main market: UK<br/>
+                    Deliveries in loose by counts to be ripened and ppacked at destination<br/>
+                    Period: January to April.<br/>
+                    The citrus are packed in a dedicated packhouse located on the farm, near Azemour.<br/>
+                    </p>
                 </div>
                 <div className='absolute left-4 bottom-2 w-80'>
-                <Image src={images.flowers.Flower_2} alt='Avacodos image' id="Image4"/>
+                <Image unoptimized src={images.oranges.Oranges_1} alt='Avacodos image' id="Image4"/>
             </div>     
              </div>
            

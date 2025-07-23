@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import  { images } from "../../../../public/products/Product";
+import  { images } from "../../../public/products/Product";
 import { useGSAP } from '@gsap/react';
-import { ProductDescription } from '../../../../public/products/components/ProductDescription/ProductDescription';
+import { ProductDescription } from '../../../public/products/components/ProductDescription';
 
-import SVGComponent from '../../../../public/assests/Svg/Svg.';
+import SVGComponent from '../../../public/assests/Svg/Svg.';
 
 import { gsap } from "gsap";
     
@@ -31,7 +31,7 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+       
        }
     })
     gsap.to("#Image2",{
@@ -41,7 +41,7 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+       
        }
     })
     gsap.to("#Image3",{
@@ -51,21 +51,9 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+       
        }
     })
-    gsap.to("#Image5",{
-      y:-130,
-      scrollTrigger: {
-          trigger: '#Box',
-          start: '140px 140px',
-          end: '+=600px',
-          scrub: true,
-          markers:true
-        }
-     })
-
-
     gsap.set("#Image4",{
     y:-600
     })
@@ -78,7 +66,7 @@ export default function ProductsPage() {
          start: '440px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+       
        }
     })
    
@@ -125,39 +113,59 @@ export default function ProductsPage() {
    };
  }, []);
 
-  return (<section className={`overflow-hidden `} style={{ backgroundColor: "#ff8921" }}>
-   
+  return (<section className={`overflow-x-hidden `} style={{ backgroundColor: "#03705a" }}>
     <div className=' w-screen h-screen relative ' id='Box'>
 
     <div  className="top-10 left-10 fixed">
     <SVGComponent/>
     </div> 
 
-<div className='relative left-30 top-72'>
-<div className='text-white  w-68 leading-8'>
-    <p>Products</p>
-    <p className='text-3xl my-4'>Avacodos</p>
-The young farm planted by Delassus will be at its full capacity by 2025.  The volume will reach 2,000 tons and be available from January to April. 
-    </div>
+<div className="relative left-12 top-24 md:left-30 md:top-72">
+  <div className="text-white w-11/12 sm:w-4/5 md:w-[30rem] leading-8 sm:text-center">
+    <p className="text-sm uppercase tracking-wide z-20">Products</p>
+    <p className="text-2xl md:text-3xl font-semibold my-4 z-20">Avocados</p>
+    <p className='z-20'>
+      The young farm planted by Delassus will reach its full capacity by 2025.
+      The volume is expected to reach 2,000 tons and will be available from January to April.
+    </p>
+  </div>
 </div>
- <div className={`w-140 h-150 right-36 absolute top-0 rounded-4xl `} style={{
-  backgroundColor:"#ff7128"
- }}>
-    <div className='relative' >
-    <Image src={images.oranges.Oranges_1} alt='Avacodos_Image_2' className='w-66 absolute top-96 -right-12 z-12' id='Image2'/>
-    <Image src={images.oranges.Oranges_2} alt='Avacodos_Image_3' className='w-32  absolute top-104 left-20 z-16' id='Image3'/>
-    <Image src={images.oranges.Oranges_3} alt='Avacodos_Image_1' className='w-64 absolute top-75 left-26 z-14'  id='Image1'/>
-    <Image src={images.oranges.Oranges_4} alt='Avacodos_Image_1' className='w-70 absolute top-8 right-24 z-14'  id='Image5'/>
-    </div>
- </div>
+
+<div
+  className="absolute right-4 sm:right-20 md:right-36 top-4 rounded-4xl z-10 w-11/12 sm:w-[22rem] md:w-[36rem] h-[32rem] sm:h-[34rem] md:h-[38rem] bg-transparent  2xl:bg-green-200"
+>
+  <div className="relative w-full h-full">
+    <Image
+      unoptimized
+      src={images.avocados.Img1}
+      alt="Avocados_Image_1"
+      className="w-32 sm:w-42 md:w-62 xl:w-84 absolute z-4 top-62 md:top-32 left-4 sm:left-8 sm:top-84 "
+      id="Image1"
+    />
+    <Image
+      unoptimized
+      src={images.avocados.Img2}
+      alt="Avocados_Image_2"
+      className="w-24 sm:w-44 md:w-64 xl:w-84 absolute md:top-4 md:left-6 sm:left-10 z-10 top-62 left-32 sm:top-72"
+      id="Image2"
+    />
+    <Image
+      unoptimized
+      src={images.avocados.Img3}
+      alt="Avocados_Image_3"
+      className="w-24 sm:w-52 md:w-72 xl:w-90 absolute top-44 right-0 sm:right-2 z-5 sm:top-62"
+      id="Image3"
+    />
+  </div>
+</div>
+
+
 
     </div>
    
-    <div className={`w-screen h-[85vh] overflow-hidden relative flex justify-center items-center `} style={{
-      backgroundColor:"#ff8921"
-    }}>
+    <div className={`w-screen h-[85vh] overflow-hidden relative flex justify-center items-center  bg-green-800`} >
       <video
-        src="/assests/Videos/Boucle_Citrus.mp4"
+        src="/assests/Videos/Boucle_Avocados.mp4"
         className="w-full h-full object-contain"
         autoPlay
         loop
@@ -184,8 +192,8 @@ The young farm planted by Delassus will be at its full capacity by 2025.  The vo
                     The avocados are packed in a dedicated packhouse located on the farm, near Azemour.<br/>
                     </p>
                 </div>
-                <div className='absolute left-4 bottom-2 w-80'>
-                <Image src={images.oranges.Oranges_1} alt='Avacodos image' id="Image4"/>
+                <div className='absolute left-4 bottom-2 md:w-80 w-20 sm:w-24'>
+                <Image unoptimized src={images.avocados.Img2} alt='Avacodos image' id="Image4"/>
             </div>     
              </div>
            
@@ -207,16 +215,11 @@ The young farm planted by Delassus will be at its full capacity by 2025.  The vo
    </div>
    </div>
 
-  <div className='relative h-[70vh]'>
-  <div className='z-24 absolute mt-16' >
+  <div >
+   <ProductDescription/>
+    </div>
  
-   <ProductDescription />
-   
-   <div className='w-screen h-[70vh] absolute top-20 z-0 mt-8 ' style={{backgroundColor:"#9f2400"}}></div>
-    </div>
-    </div>
 
-  
 </section>
 )
 

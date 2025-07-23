@@ -5,10 +5,17 @@ import Image from 'next/image'
 import Img1 from "../../assests/Images/avacodos/avacodos_1.png"
 import Img2 from "../../assests/Images/avacodos/04.avocados_Home_Avocados_02x2_z7qmvq.png"
 import Img3 from "../../assests/Images/avacodos/avacodos_3.png"
+import { useRouter } from 'next/navigation'
 
 type Props = {}
 
 export const AvacodosDiv = (props: Props) => {
+
+     const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/about'); // navigates to /about
+  };
   
          const container3Ref = useRef(null);
         

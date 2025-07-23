@@ -21,7 +21,7 @@ export const Button = ({BgColor,PageRoute}: Props) => {
       onMouseLeave={() => setHovered(false)}
       className={`absolute right-8 bottom-12 group text-white font-semibold cursor-pointer rounded-full overflow-hidden  w-52 h-16 backdrop-blur-md ${BgColor} hover:bg-white/10 border border-white/30 shadow-md transition-all duration-500`}
       onClick={()=>{ setTimeout(()=>{
-        router.push(`/products/${PageRoute}`)
+        router.push(`/${PageRoute}`)
       },200) }}    
   >
   

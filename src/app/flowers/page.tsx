@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import  { images } from "../../../../public/products/Product";
+import  { images } from "../../../public/products/Product";
 import { useGSAP } from '@gsap/react';
-import { ProductDescription } from '../../../../public/products/components/ProductDescription/ProductDescription';
+import { ProductDescription } from '../../../public/products/components/ProductDescription';
 
-import SVGComponent from '../../../../public/assests/Svg/Svg.';
+import SVGComponent from '../../../public/assests/Svg/Svg.';
 
 import { gsap } from "gsap";
     
@@ -24,16 +24,7 @@ declare module "react" {
 export default function ProductsPage() {
 
   useGSAP(()=>{
-    gsap.to("#Image1",{
-     y:-130,
-     scrollTrigger: {
-         trigger: '#Box',
-         start: '140px 140px',
-         end: '+=600px',
-         scrub: true,
-         markers:true
-       }
-    })
+
     gsap.to("#Image2",{
      y:-130,
      scrollTrigger: {
@@ -41,7 +32,7 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
     gsap.to("#Image3",{
@@ -51,9 +42,11 @@ export default function ProductsPage() {
          start: '140px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
+  
+
     gsap.set("#Image4",{
     y:-600
     })
@@ -66,7 +59,7 @@ export default function ProductsPage() {
          start: '440px 140px',
          end: '+=600px',
          scrub: true,
-         markers:true
+        
        }
     })
    
@@ -113,46 +106,64 @@ export default function ProductsPage() {
    };
  }, []);
 
-  return (<section className={`overflow-x-hidden `} style={{ backgroundColor: "#ff8921" }}>
+  return (<section className={`overflow-hidden `} style={{ backgroundColor: "#ffb700" }}>
+   
     <div className=' w-screen h-screen relative ' id='Box'>
 
     <div  className="top-10 left-10 fixed">
     <SVGComponent/>
     </div> 
 
-<div className='relative left-30 top-72'>
-<div className='text-white  w-68 leading-8'>
-    <p>Products</p>
-    <p className='text-3xl my-4'>Avacodos</p>
-The young farm planted by Delassus will be at its full capacity by 2025.  The volume will reach 2,000 tons and be available from January to April. 
-    </div>
+<div className="relative left-12 top-24 md:left-30 md:top-52">
+  <div className="text-white w-11/12 sm:w-4/5 md:w-[30rem] leading-8 sm:text-center">
+    <p className="text-sm uppercase tracking-wide">Products</p>
+    <p className="text-2xl md:text-4xl font-semibold my-4 z-10">Flowers</p>
+    <p>
+      Primrose is the closest carnation grower to Europe. It produces hundreds of
+      varieties — both spray and standard carnations — with the preferred mix color required
+      by customers. Primrose exports 55 million stems of Spray Carnations and approximately
+      10 million stems of Standard Carnations.
+    </p>
+  </div>
 </div>
- <div className={`w-160 h-150 right-36 absolute top-0 rounded-4xl `} style={{
-  backgroundColor:"#ff7128"
- }}>
-    <div className='relative' >
-    <Image src={images.oranges.Oranges_1} alt='Avacodos_Image_2' className='w-84 absolute top-46 left-8 z-12' id='Image2'/>
-    <Image src={images.oranges.Oranges_2} alt='Avacodos_Image_3' className='w-84  absolute top-4 left-10' id='Image3'/>
-    <Image src={images.oranges.Oranges_3} alt='Avacodos_Image_1' className='w-90 absolute top-55 right-2 z-14'  id='Image1'/>
-    <Image src={images.oranges.Oranges_4} alt='Avacodos_Image_1' className='w-90 absolute top-55 right-2 z-14'  id='Image4'/>
-    </div>
+
+ <div className={`2xl:w-140 2xl:h-150 xl:w-120 xl:h-130 h-120 w-85 right-36 md:top-12 absolute xl:top-0 rounded-4xl z-4 sm:bg-transparent xl:bg-[#ffd200] `} >
+<div className="relative w-full">
+  <Image
+    unoptimized
+    src={images.flowers.Flower_1}
+    alt="Flowers_Image_1"
+    className="w-64 sm:w-96 md:w-[34rem] absolute top-72 sm:top-80 -right-4 sm:-right-6 z-12"
+    id="Image2"
+  />
+  <Image
+    unoptimized
+    src={images.flowers.Flower_2}
+    alt="Flowers_Image_2"
+    className="w-40 sm:w-56 md:w-72 absolute top-24 sm:top-30 right-8 sm:right-14 z-16"
+    id="Image3"
+  />
+</div>
+
  </div>
 
     </div>
    
-    <div className={`w-screen h-[85vh] overflow-hidden relative flex justify-center items-center `} style={{
-      backgroundColor:"#ff8921"
-    }}>
-      <video
-        src="/assests/Videos/Boucle_Citrus.mp4"
-        className="w-full h-full object-contain"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-      
-    </div>
+    <div
+  className={`w-screen h-[100vh] overflow-hidden relative flex `}
+  style={{
+    backgroundColor: "#f7be00",
+  }}
+>
+  <video
+    src="/assests/Videos/Boucle_Flowers.mp4"
+    className="w-full h-full object-fill"
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+</div>
 
     <div id='Section2'>
     <div className=" relative overflow-y-hidden overflow-x-hidden">
@@ -160,19 +171,19 @@ The young farm planted by Delassus will be at its full capacity by 2025.  The vo
 
 
                 <div className="w-96 text-center leading-10 text-xl  ">
-                    <h1 className='text-4xl '>Varieties</h1>
-                    <p >
-
-                    Best variety of avocados <br/>
-                    Main variety: Hass<br/>
-                    Main market: UK<br/>
-                    Deliveries in loose by counts to be ripened and ppacked at destination<br/>
-                    Period: January to April.<br/>
-                    The avocados are packed in a dedicated packhouse located on the farm, near Azemour.<br/>
-                    </p>
+                    <h1 className='text-4xl  '>Flowers for Morocco</h1>
+                    <p className='mt-8'>
+                      
+                  Primrose covers the production process, from producing their own cuttings to post-harvest treatment.<br/>
+                  </p>
+                  <p className='mt-8'>
+                  Primrose also grows a wide range of species for Moroccan local market such as Lisianthus, Gladioli, Alsromeria, Anthurium, Gerbera and many other varieties.
+                  </p>
+                  <br/>
+                  
                 </div>
                 <div className='absolute left-4 bottom-2 w-80'>
-                <Image src={images.oranges.Oranges_1} alt='Avacodos image' id="Image4"/>
+                <Image unoptimized src={images.flowers.Flower_2} alt='Avacodos image' id="Image4"/>
             </div>     
              </div>
            
@@ -194,11 +205,16 @@ The young farm planted by Delassus will be at its full capacity by 2025.  The vo
    </div>
    </div>
 
-  <div >
-   <ProductDescription/>
-    </div>
+  <div className='relative h-[70vh]'>
+  <div className='z-24 absolute mt-16' >
  
+   <ProductDescription />
+   
+   <div className='w-screen h-[70vh] absolute top-20 z-0 mt-8 ' style={{backgroundColor:"#9f2400"}}></div>
+    </div>
+    </div>
 
+  
 </section>
 )
 
